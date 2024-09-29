@@ -12,9 +12,9 @@ namespace PaperRockScissors
             string computerChoice;
             Random rand = new Random();
 
-            while (!finished) 
+            while (!finished)
             {
-                computer = rand.Next(0,3);
+                computer = rand.Next(0, 3);
                 var compChoice = (CompChoice.Choice)computer;
                 computerChoice = compChoice.ToString();
 
@@ -22,25 +22,55 @@ namespace PaperRockScissors
 
                 Console.WriteLine("enter \"paper\", \"rock\" or \"scissors\": ");
                 player = Console.ReadLine();
-                switch (player)
-                {
-                    case "paper":
-                        Console.WriteLine("paper " + computerChoice);
-                        break;
 
-                    case "rock":
-                        Console.WriteLine("rock " + computerChoice);
-                        break;
-
-                    case "scissors":
-                        Console.WriteLine("scissors " + computerChoice);
-                        break;
-
-                    default:
-                        Console.WriteLine("TRY AGAIN");
-                        break;
+                if (player == computerChoice)
+                { 
+                    Console.WriteLine(player + " VS " + computerChoice + " -> DRAW !");
                 }
 
+                else 
+                {
+                    switch (player)
+                    {
+                        case "paper":
+                            if (computerChoice == "scissors")
+                            {
+                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU LOOSE!");
+                            }
+                            else
+                            {
+                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU WIN!");
+                            }
+                            break;
+
+                        case "rock":
+                            if (computerChoice == "paper")
+                            {
+                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU LOOSE!");
+                            }
+                            else
+                            {
+                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU WIN!");
+                            }
+                            break;
+
+                        case "scissors":
+                            if (computerChoice == "rock")
+                            {
+                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU LOOSE!");
+                            }
+                            else
+                            {
+                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU WIN!");
+                            }
+                            break;
+
+                        default:
+                            Console.WriteLine("TRY AGAIN");
+                            break;
+                    }
+
+                }
 
 
 
