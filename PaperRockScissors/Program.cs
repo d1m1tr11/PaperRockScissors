@@ -30,7 +30,7 @@ namespace PaperRockScissors
 
                 else 
                 {
-                    switch (player)
+                    switch (player) 
                     {
                         case "paper":
                             if (computerChoice == "scissors")
