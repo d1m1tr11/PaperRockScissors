@@ -1,4 +1,5 @@
 ﻿using System.Reflection.Metadata;
+using static PaperRockScissors.CompChoice;
 
 namespace PaperRockScissors
 {
@@ -9,59 +10,55 @@ namespace PaperRockScissors
             bool finished = false;
             string player;
             int computer;
-            string computerChoice;
             Random rand = new Random();
 
             while (!finished)
             {
                 computer = rand.Next(0, 3);
-                var compChoice = (CompChoice.Choice)computer;
-                computerChoice = compChoice.ToString();
-
-
+                Choice compChoice = (Choice)computer;
 
                 Console.WriteLine("enter \"paper\", \"rock\" or \"scissors\": ");
                 player = Console.ReadLine();
 
-                if (player == computerChoice)
-                { 
-                    Console.WriteLine(player + " VS " + computerChoice + " -> DRAW !");
+                if (player == compChoice.ToString())
+                {
+                    Console.WriteLine(player + " VS " + compChoice + " -> DRAW !");
                 }
 
-                else 
+                else
                 {
-                    switch (player) 
+                    switch (player)
                     {
                         case "paper":
-                            if (computerChoice == "scissors")
+                            if (compChoice.ToString() == "scissors")
                             {
-                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU LOOSE!");
+                                Console.WriteLine(player + " VS " + compChoice + " -> YOU LOOSE!");
                             }
                             else
                             {
-                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU WIN!");
+                                Console.WriteLine(player + " VS " + compChoice + " -> YOU WIN!");
                             }
                             break;
 
                         case "rock":
-                            if (computerChoice == "paper")
+                            if (compChoice.ToString() == "paper")
                             {
-                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU LOOSE!");
+                                Console.WriteLine(player + " VS " + compChoice + " -> YOU LOOSE!");
                             }
                             else
                             {
-                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU WIN!");
+                                Console.WriteLine(player + " VS " + compChoice + " -> YOU WIN!");
                             }
                             break;
 
                         case "scissors":
-                            if (computerChoice == "rock")
+                            if (compChoice.ToString() == "rock")
                             {
-                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU LOOSE!");
+                                Console.WriteLine(player + " VS " + compChoice + " -> YOU LOOSE!");
                             }
                             else
                             {
-                                Console.WriteLine(player + " VS " + computerChoice + " -> YOU WIN!");
+                                Console.WriteLine(player + " VS " + compChoice + " -> YOU WIN!");
                             }
                             break;
 
