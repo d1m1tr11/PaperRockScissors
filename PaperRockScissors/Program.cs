@@ -10,8 +10,8 @@ namespace PaperRockScissors
         static void Main(string[] args)
         {
             bool finished = false;
-            int computer;
-            int user;
+            // int computer; aq jobs gamovacxado tu sadac viyeneb iqve ?
+            // int user;
             Random rand = new Random();
 
 
@@ -23,43 +23,52 @@ namespace PaperRockScissors
             {
                 Console.WriteLine("\n");
                 Console.WriteLine("enter \"paper\" = 1, \"rock\" = 2 or \"scissors\": = 3 ");
-                user = Convert.ToInt32(Console.ReadLine());
-                if (user == 1 || user == 2 || user == 3)
+                
+                bool success = int.TryParse(Console.ReadLine(), out int user);
+                if (success)
                 {
 
-                    computer = rand.Next(1, 4);
-                    Choice compChoice = (Choice)computer;
-                    Choice userChoice = (Choice)user;
-
-                    if (computer == user)
+                    if (user == 1 || user == 2 || user == 3)
                     {
-                        Console.WriteLine(userChoice + " VS " + compChoice + " It's DRAW! ");
-                    }
 
-                    else if (user == 1 && computer == 2)
-                    {
-                        Console.WriteLine(userChoice + " VS " + compChoice + " Player Wins! ");
-                    }
+                        int computer = rand.Next(1, 4);
+                        Choice compChoice = (Choice)computer;
+                        Choice userChoice = (Choice)user;
 
-                    else if (user == 2 && computer == 3)
-                    {
-                        Console.WriteLine(userChoice + " VS " + compChoice + " Player Wins! ");
-                    }
+                        if (computer == user)
+                        {
+                            Console.WriteLine(userChoice + " VS " + compChoice + " It's DRAW! ");
+                        }
 
-                    else if (user == 3 && computer == 1)
-                    {
-                        Console.WriteLine(userChoice + " VS " + compChoice + " Player Wins! ");
+                        else if (user == 1 && computer == 2)
+                        {
+                            Console.WriteLine(userChoice + " VS " + compChoice + " Player Wins! ");
+                        }
+
+                        else if (user == 2 && computer == 3)
+                        {
+                            Console.WriteLine(userChoice + " VS " + compChoice + " Player Wins! ");
+                        }
+
+                        else if (user == 3 && computer == 1)
+                        {
+                            Console.WriteLine(userChoice + " VS " + compChoice + " Player Wins! ");
+                        }
+
+                        else
+                        {
+                            Console.WriteLine(userChoice + " VS " + compChoice + " Player Loose! ");
+                        }
                     }
 
                     else
                     {
-                        Console.WriteLine(userChoice + " VS " + compChoice + " Player Loose! ");
+                        Console.WriteLine("TRY AGAIN 1, 2 or 3: ");
                     }
                 }
-
-                else
+                else 
                 {
-                    Console.WriteLine("TRY AGAIN 1, 2 or 3: ");
+                    Console.WriteLine("ARE YOU DUMB ?"); 
                 }
 
             }
