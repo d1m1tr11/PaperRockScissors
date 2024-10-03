@@ -10,9 +10,9 @@ namespace PaperRockScissors
     {
         public enum Choice
         {
-            paper,
-            rock,
-            scissors
+            Paper=1,
+            Rock,
+            Scissors
         }
 
        
