@@ -16,14 +16,7 @@ namespace PaperRockScissors
         Console.WriteLine("wanna play again? ");
         string userChoice = Console.ReadLine();
 
-            if (userChoice != null && userChoice == "y")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return userChoice != null && userChoice == "y";    
 
         }
     }
