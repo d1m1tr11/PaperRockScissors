@@ -1,5 +1,6 @@
 ﻿using System.Reflection.Metadata;
 
+
 namespace PaperRockScissors
 {
     internal class Program
@@ -8,10 +9,10 @@ namespace PaperRockScissors
 
         static void Main(string[] args)
         {
-            bool finished = false;
+            bool playing = true;
             Random rand = new Random();
 
-            while (!finished)
+            while (playing)
             {
                 Console.WriteLine("\n");
                 Console.WriteLine("enter \"paper\" = 1, \"rock\" = 2 or \"scissors\": = 3 ");
@@ -62,6 +63,8 @@ namespace PaperRockScissors
                 {
                     Console.WriteLine("ARE YOU DUMB ?"); 
                 }
+
+                playing = PlayAgain.Playing();
 
             }
 
