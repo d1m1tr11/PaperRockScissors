@@ -12,18 +12,17 @@ namespace PaperRockScissors
 
         public static bool Playing()
         {
-            bool result;
            
         Console.WriteLine("wanna play again? ");
         string userChoice = Console.ReadLine();
 
             if (userChoice != null && userChoice == "y")
             {
-                return result = true;
+                return true;
             }
             else
             {
-                return result = false;
+                return false;
             }
 
         }
