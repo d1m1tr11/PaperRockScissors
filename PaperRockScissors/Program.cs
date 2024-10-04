@@ -1,5 +1,4 @@
 ﻿using System.Reflection.Metadata;
-using static PaperRockScissors.CompChoice;
 
 namespace PaperRockScissors
 {
@@ -10,14 +9,7 @@ namespace PaperRockScissors
         static void Main(string[] args)
         {
             bool finished = false;
-            // int computer; aq jobs gamovacxado tu sadac viyeneb iqve ?
-            // int user;
             Random rand = new Random();
-
-
-
-
-
 
             while (!finished)
             {
@@ -32,8 +24,8 @@ namespace PaperRockScissors
                     {
 
                         int computer = rand.Next(1, 4);
-                        Choice compChoice = (Choice)computer;
-                        Choice userChoice = (Choice)user;
+                        var compChoice = (Choice)computer;
+                        var userChoice = (Choice)user;
 
                         if (computer == user)
                         {

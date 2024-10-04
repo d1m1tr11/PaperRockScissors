@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace PaperRockScissors
 {
-    public class CompChoice
-    {
         public enum Choice
         {
             Paper=1,
             Rock,
             Scissors
         }
-
-       
-    }
 }
